@@ -8,6 +8,8 @@ package com.mycompany.jogo_da_velha_3d;
  *
  * @author raque
  */
+
+/// Raquel Larrat Lopes  202035009
 import java.util.Scanner;
 import java.util.Random;
 
@@ -99,13 +101,24 @@ public class Jogo {
 
         /// verifica se o jogador ganhou por diagonal das 3 camadas
         if ((camada1[0][0] == j && camada2[1][1] == j && camada3[2][2] == j)
-                || (camada1[0][0] == j && camada2[2][2] == 'j' && camada3[1][1] == j)
-                || (camada1[1][1] == j && camada2[0][0] == 'j' && camada3[2][2] == j)
-                || (camada1[1][1] == j && camada2[2][2] == 'j' && camada3[0][0] == j)
-                || (camada1[2][2] == j && camada2[0][0] == 'j' && camada3[1][1] == j)
-                || (camada1[2][2] == j && camada2[1][1] == 'j' && camada3[0][0] == j)) {
+                || (camada1[0][0] == j && camada2[2][2] == j && camada3[1][1] == j)
+                || (camada1[1][1] == j && camada2[0][0] == j && camada3[2][2] == j)
+                || (camada1[1][1] == j && camada2[2][2] == j && camada3[0][0] == j)
+                || (camada1[2][2] == j && camada2[0][0] == j && camada3[1][1] == j)
+                || (camada1[2][2] == j && camada2[1][1] == j && camada3[0][0] == j)) {
             return true;
         }
+        
+        /// verifica a outra diagonal por camadas
+        if ((camada1[0][2] == j && camada2[1][1] == j && camada3[2][0] == j)
+                || (camada1[1][1] == j && camada2[0][2] == j && camada3[2][0] == j)
+                || (camada1[1][1] == j && camada2[2][0] == j && camada3[0][2] == j)
+                || (camada1[2][0] == j && camada2[1][1] == j && camada3[0][2] == j)
+                || (camada1[2][0] == j && camada2[0][2] == j && camada3[1][1] == j)
+                || (camada1[0][2] == j && camada2[2][0] == j && camada3[1][1] == j)) {
+            return true;
+        }
+        
 
         return false;
     }
